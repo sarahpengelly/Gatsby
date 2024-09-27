@@ -25,5 +25,21 @@
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         }).addTo(map);
 
+        // sample latitude/longitude coordinates (will get these from a scrape in the final version)
+        // Sample dataset of latitude and longitude coordinates
+        var coordinates = [
+            { lat: 51.505, lng: -0.09, info: "point info 1" },
+            { lat: 51.515, lng: -0.1, info: "point info 2" },
+            { lat: 51.525, lng: -0.08, info: "point info 3" },
+            { lat: 51.535, lng: -0.07, info: "point info 4" }
+        ];
+
+        // Display all the coordinates pulled by the scrape
+
+        // Loop through the dataset and add markers to the map
+        coordinates.forEach(function(coord) {
+            L.marker([coord.lat, coord.lng]).addTo(map)
+              .bindPopup(coord.info);
+        });
     </script>
 </body>
